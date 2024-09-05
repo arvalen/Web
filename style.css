@@ -20,7 +20,7 @@ body {
 section {
     padding: 100px 20px;
     color: #fff;
-    background-color: #0b1e2b; 
+    background-color: #0b1e2b;
     text-align: center;
 }
 
@@ -37,7 +37,7 @@ section p {
 }
 
 #about {
-    background-color: #0b1e2b; 
+    background-color: #0b1e2b;
 }
 
 #education {
@@ -45,7 +45,7 @@ section p {
 }
 
 #contact {
-    background-color: #0b1e2b;
+    background-color: #0b1e2b; 
 }
 
 .logo{
@@ -96,7 +96,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0b1e2b;
+    background-color: #0b1e2b; 
 }
 
 .parallax{
@@ -258,7 +258,7 @@ header ul a{
 }
 
 .social-links .blogspot:hover {
-    color: #fff;
+    color: #37779a;
 }
 
 .cv-button {
@@ -287,4 +287,3 @@ header ul a{
     object-fit: cover; 
     border: 3px solid #fff; 
 }
-
