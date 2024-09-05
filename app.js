@@ -46,7 +46,7 @@ timeline.from(".jauh",{
 });
 
 timeline.from(".sekitar",{
-    top: `${+document.querySelector(".sekitar").offsetHeight / 2 }px`,
+    top: `${+document.querySelector(".sekitar").offsetHeight / 2}px`,
     duration: 1,
 });
 
@@ -56,13 +56,14 @@ timeline.from(
         y:
             window.innerHeight - 
             document.querySelector(".text h1").getBoundingClientRect().top + 150,
+            opacity: 0,
         duration: 1,
     },
     "1.5"
 )
 .from(".text h2",
     {
-        y: - 100,
+        y: - 70,
         opacity: 0,
         duration: 1,
     },
