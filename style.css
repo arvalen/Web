@@ -264,6 +264,7 @@ header ul a{
 .cv-button {
     display: inline-block;
     margin-top: 20px;
+    margin-bottom: 90px;
     padding: 10px 20px;
     font-size: 1.2rem;
     color: #fff;
@@ -276,3 +277,14 @@ header ul a{
 .cv-button:hover {
     background-color: #285b77;
 }
+
+.profile-photo {
+    display: block; 
+    margin: 40px auto 20px; 
+    width: 300px; 
+    height: 300px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 3px solid #fff; 
+}
+
