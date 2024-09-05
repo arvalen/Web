@@ -46,7 +46,7 @@ timeline.from(".jauh",{
 });
 
 timeline.from(".sekitar",{
-    top: `${+document.querySelector(".sekitar").offsetHeight / 0.012}px`,
+    top: `${+document.querySelector(".sekitar").offsetHeight / 2 }px`,
     duration: 1,
 });
 
