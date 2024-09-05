@@ -40,13 +40,13 @@ window.addEventListener("mousemove", (e) => {
 
 let timeline = gsap.timeline();
 
-timeline.from(".1jauh",{
-    top: `${+document.querySelector(".1jauh").offsetHeight / 2 - 100}px`,
+timeline.from(".jauh",{
+    top: `${+document.querySelector(".jauh").offsetHeight / 2 - 100}px`,
     duration: 1,
 });
 
-timeline.from(".1sekitar",{
-    top: `${+document.querySelector(".1sekitar").offsetHeight / 0.012}px`,
+timeline.from(".sekitar",{
+    top: `${+document.querySelector(".sekitar").offsetHeight / 0.012}px`,
     duration: 1,
 });
 
