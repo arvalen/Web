@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            background-color: #87CEEB;
+        }
+        form {
+            margin: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="password"], select, textarea {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 300px; 
+            height: 60px;
+        }
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <div class="form-group">
+            <label for="firstname">Firstname:</label>
+            <input type="text" id="firstname" name="firstname">
+        </div>
+        <div class="form-group">
+            <label for="middlename">Middlename:</label>
+            <input type="text" id="middlename" name="middlename">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Lastname:</label>
+            <input type="text" id="lastname" name="lastname">
+        </div>
+        <div class="form-group">
+            <label for="course">Course:</label>
+            <select id="course" name="course">
+                <option value="course1">Course 1</option>
+                <option value="course2">Course 2</option>
+                <option value="course3">Course 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" value="+62">
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="retype-password">Re-type password:</label>
+            <input type="password" id="retype-password" name="retype-password">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+</body>
+</html>
