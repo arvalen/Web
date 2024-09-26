@@ -6,88 +6,185 @@
     <title>Form</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             background-color: #87CEEB;
         }
+
         form {
-            margin: 20px;
+            background-color: white;
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
+
         label {
-            display: inline-block;
-            width: 100px;
-            margin-bottom: 10px;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
         }
+
         input[type="text"], input[type="password"], select, textarea {
-            width: 200px;
-            padding: 5px;
-            margin-bottom: 10px;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
         }
-        textarea {
-            width: 300px; 
-            height: 60px;
+
+        input[type="radio"] {
+            margin-right: 5px;
         }
-        input[type="submit"] {
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            width: 100%;
             margin-top: 10px;
-            padding: 5px 10px;
         }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
         .form-group {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .form-row .form-group:last-child {
+            margin-right: 0;
+        }
+
+        .gender-options {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .gender-options label {
+            margin-right: 15px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .gender-options input[type="radio"] {
+            margin-left: 10px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .phone-number {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .phone-number input {
+            margin-left: 10px;
+            display: inline-block;
+        }
+
+        .phone-number input#phonenumber {
+            width: 60px;
+        }
+
+        .phone-number input#number {
+            flex: 1;
+            margin-left: 10px;
+        }
+
     </style>
 </head>
 <body>
+    <form method="post" action="form.html"> 
+        <div class="form-row">
+            <div class="form-group">
+                <label for="fname">Firstname</label>
+                <input type="text" id="fname" name="fname">
+            </div>
 
-    <form>
-        <div class="form-group">
-            <label for="firstname">Firstname:</label>
-            <input type="text" id="firstname" name="firstname">
+            <div class="form-group">
+                <label for="mname">Middlename</label>
+                <input type="text" id="mname" name="mname">
+            </div>
+
+            <div class="form-group">
+                <label for="lname">Lastname</label>
+                <input type="text" id="lname" name="lname">
+            </div>
         </div>
-        <div class="form-group">
-            <label for="middlename">Middlename:</label>
-            <input type="text" id="middlename" name="middlename">
-        </div>
-        <div class="form-group">
-            <label for="lastname">Lastname:</label>
-            <input type="text" id="lastname" name="lastname">
-        </div>
+
         <div class="form-group">
             <label for="course">Course:</label>
             <select id="course" name="course">
-                <option value="course1">Course 1</option>
-                <option value="course2">Course 2</option>
-                <option value="course3">Course 3</option>
+                <option value="" disabled selected></option>
+                <option value="course1">Pemrograman Web</option>
+                <option value="course2">Pemrograman Perangkat Bergerak</option>
+                <option value="course3">Pemrograman Berbasis Objek</option>
             </select>
         </div>
-        <div class="form-group">
-            <label>Gender:</label>
-            <input type="radio" id="male" name="gender" value="male">
+
+        <div class="form-group gender-options">
+            <label>Gender</label>
+            <input type="radio" name="opsi" value="male" id="male">
             <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female">
+            <input type="radio" name="opsi" value="female" id="female">
             <label for="female">Female</label>
         </div>
-        <div class="form-group">
-            <label for="phone">Phone:</label>
-            <input type="text" id="phone" name="phone" value="+62">
+
+        <div class="form-group phone-number">
+            <label>Phone</label>
+            <input type="text" id="phonenumber" name="phonenumber" placeholder="+62">
+            <input type="text" id="number" name="number">
         </div>
+
         <div class="form-group">
-            <label for="address">Address:</label>
-            <textarea id="address" name="address"></textarea>
+            <label for="address">Address</label>
+            <textarea rows="3" name="address"></textarea>
         </div>
+
         <div class="form-group">
-            <label for="email">Email:</label>
+            <label for="email">Email</label>
             <input type="text" id="email" name="email">
         </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-        </div>
-        <div class="form-group">
-            <label for="retype-password">Re-type password:</label>
-            <input type="password" id="retype-password" name="retype-password">
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Submit">
-        </div>
-    </form>
 
+        <div class="form-row">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <div class="form-group">
+                <label for="rpassword">Re-type Password</label>
+                <input type="password" id="rpassword" name="rpassword">
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
