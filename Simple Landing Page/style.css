@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #101820;
+    color: #fff;
+}
+
+header {
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+nav .logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #f0a045;
+}
+
+nav .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav .nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav .nav-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #f0a045;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+nav .nav-menu li a:hover::after {
+    width: 100%;
+}
+
+.diagonal-bg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a2b39 50%, #101820 50%);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.landing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 50px;
+    min-height: 100vh;
+    position: relative;
+}
+
+.landing .content {
+    max-width: 50%;
+    z-index: 1;
+}
+
+.landing h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.landing h1 span {
+    color: #f0a045;
+}
+
+.landing .date {
+    font-size: 1.5em;
+    color: #f0a045;
+    margin: 20px 0;
+}
+
+.landing .description {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #d3d3d3;
+}
+
+.landing .register-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #f0a045;
+    color: #101820;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.landing .register-btn:hover {
+    background-color: #d9922f;
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.circle-background {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: #ff9603ad;
+    border-radius: 50%;
+    z-index: 1;
+    left: -100px;
+}
+
+.image-container img {
+    position: relative;
+    width: 450px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+footer {
+    padding: 30px;
+    text-align: right;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.social-links li a {
+    color: #f0a045;
+    font-size: 1.8em;
+    transition: color 0.3s;
+}
+
+.social-links li a:hover {
+    color: #d9922f;
+}
