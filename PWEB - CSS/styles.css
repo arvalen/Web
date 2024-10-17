@@ -1,0 +1,118 @@
+body {
+    background: linear-gradient(to right, #e0f7fa, #80deea);
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    background-color: #00695c;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio {
+    padding: 40px;
+}
+
+.portfolio h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #004d40;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    width: 220px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden; 
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+    background: linear-gradient(to right, #00134d, #009688);
+    color: #fff;
+    margin: -20px -20px 15px -20px;
+    padding: 15px;
+    border-radius: 12px 12px 0 0;
+    font-size: 1.8em;
+}
+
+
+.card p {
+    text-align: justify;
+    color: #555;
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #00796b;
+    border: 2px solid #00796b;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card a:hover {
+    background-color: #00796b;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        justify-content: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 300px; 
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .portfolio h2 {
+        font-size: 2em; 
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; 
+        padding: 15px; 
+    }
+
+    .card h3 {
+        font-size: 1.5em; 
+    }
+
+    .card p {
+        font-size: 13px; 
+    }
+}
