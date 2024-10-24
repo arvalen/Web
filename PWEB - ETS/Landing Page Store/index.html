@@ -1,250 +1,21 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valen Store</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(45deg, #1d1f21, #43464b);
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background-color: #141414;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    header .logo {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #ffa500;
-      letter-spacing: 2px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-    }
-
-    nav ul li {
-      margin-left: 20px;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #ffa500;
-    }
-
-    .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 100px 20px 50px 20px;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    color: white;
-    }
-
-    .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-    }
-
-    .hero button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background-color: #ffa500;
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s;
-    }
-
-    .hero button:hover {
-    background-color: #ff8c00;
-    transform: translateY(-5px);
-    }
-
-    .hero img {
-    max-width: 100%;
-    border-radius: 12px;
-    }
-
-
-    /* Produk Grid */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 40px 20px;
-      margin: 40px 0;
-      background-color: #fff;
-      color: #333;
-      border-radius: 12px;
-    }
-
-    .product-grid .product-card {
-      background: #f4f4f4;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .product-grid .product-card img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
-    }
-
-    .product-grid .product-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    .product-grid .product-card p {
-      margin-bottom: 20px;
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .product-grid .product-card button {
-      padding: 10px 20px;
-      background-color: #141414;
-      color: #fff;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .product-grid .product-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .product-grid .product-card img {
-    width: 100%; 
-    height: 200px; 
-    object-fit: cover; 
-    border-radius: 12px;
-    margin-bottom: 15px;
-    }
-
-
-    .product-grid .product-card button:hover {
-      background-color: #ffa500;
-    }
-
-    /* Footer */
-    footer {
-    background-color: #141414;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 60px;
-    }
-
-    footer p {
-    margin-bottom: 10px;
-    }
-
-    .social-icons {
-    margin: 20px 0;
-    }
-
-    .social-icons a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 1.8rem;
-    transition: color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-    color: #ffa500;
-    }
-
-    /*Map*/
-    .map-container {
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    border-radius: 10px;
-    overflow: hidden;
-    }
-
-    .map-container iframe {
-    border: 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-
-    @media (max-width: 768px) {
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .hero button {
-        padding: 12px 25px;
-        font-size: 1rem;
-      }
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valen Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
     <header>
-        <div class="logo" style="display: flex; align-items: center;">
-            <img src="img/logo.svg" alt="Logo Valen" style="height: 50px; margin-right: 10px;">
-            <span style="font-size: 1.5rem; font-weight: bold; color: #fff;">Valen</span> 
-        </div>
+      <div class="logo" style="display: flex; align-items: center;">
+        <img src="img/logo.svg" alt="" style="height: 50px; margin-right: 10px;">
+        <span style="font-size: 2rem; font-weight: bold; color: #ffffff; letter-spacing: 2px;">Valen</span>
+    </div>
+    
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -254,66 +25,56 @@
             </ul>
         </nav>
     </header>
-    
-      
-  
 
-  <!-- Hero Section -->
-  <section class="hero" style="flex-direction: row; text-align: left;">
-    <div class="hero-content" style="flex: 1;">
-      <h1>V-Moda Crossfade 3 Wireless</h1>
-        <p>Crossfade 3 Wireless terlihat sebagus kedengarannya dengan evolusi yang disempurnakan dari desain V-MODA yang khas dan penuh gaya.
-            Ikat kepala logam yang kuat dan fleksibel serta bantalan busa memori yang besar memberikan kenyamanan yang tahan lama dan isolasi yang unggul saat melakukan dan mendengarkan. Dan dengan warna Matte Black yang tak lekang oleh waktu serta warna Gunmetal Black dan Bronze Black yang mencolok, Anda memiliki tiga pilihan menarik yang sesuai dengan gaya hidup Anda.
-        </p>
-      <button>Beli Sekarang</button>
-    </div>
-    <div class="hero-image" style="flex: 1; text-align: center;">
-      <img src="img/vmoda.jpg" alt="V-MODA Crossfade 3 Wireless" style="max-width: 100%; border-radius: 12px;">
-    </div>
-  </section>
+    <section class="hero" style="flex-direction: row; text-align: left;">
+        <div class="hero-content" style="flex: 1;">
+            <h1>V-Moda Crossfade 3 Wireless</h1>
+            <p>Crossfade 3 Wireless terlihat sebagus kedengarannya dengan evolusi yang disempurnakan dari desain V-MODA yang khas dan penuh gaya.
+                Ikat kepala logam yang kuat dan fleksibel serta bantalan busa memori yang besar memberikan kenyamanan yang tahan lama dan isolasi yang unggul saat melakukan dan mendengarkan. Dan dengan warna Matte Black yang tak lekang oleh waktu serta warna Gunmetal Black dan Bronze Black yang mencolok, Anda memiliki tiga pilihan menarik yang sesuai dengan gaya hidup Anda.
+            </p>
+            <button>Beli Sekarang</button>
+        </div>
+        <div class="hero-image" style="flex: 1; text-align: center;">
+            <img src="img/vmoda.png" alt="V-MODA Crossfade 3 Wireless" style="max-width: 100%; border-radius: 12px;">
+        </div>
+    </section>
 
+    <section class="product-grid">
+        <div class="product-card">
+            <img src="img/smartphone.webp" alt="Smartphone Unggulan">
+            <h3>Smartphone Unggulan</h3>
+            <p>Teknologi mutakhir dengan performa cepat dan kamera jernih. Ideal untuk multitasking dan fotografi.</p>
+            <button>Beli Sekarang</button>
+        </div>
 
-  <!-- Produk Grid Section -->
-  <section class="product-grid">
-    <div class="product-card">
-      <img src="img/smartphone.webp" alt="Smartphone Unggulan">
-      <h3>Smartphone Unggulan</h3>
-      <p>Teknologi mutakhir dengan performa cepat dan kamera jernih. Ideal untuk multitasking dan fotografi.</p>
-      <button>Beli Sekarang</button>
-    </div>
+        <div class="product-card">
+            <img src="img/laptop.webp" alt="Laptop Premium">
+            <h3>Laptop Premium</h3>
+            <p>Desain elegan dengan spesifikasi tinggi untuk produktivitas dan hiburan terbaik. Garansi resmi 2 tahun.</p>
+            <button>Beli Sekarang</button>
+        </div>
 
-    <div class="product-card">
-      <img src="img/laptop.webp" alt="Laptop Premium">
-      <h3>Laptop Premium</h3>
-      <p>Desain elegan dengan spesifikasi tinggi untuk produktivitas dan hiburan terbaik. Garansi resmi 2 tahun.</p>
-      <button>Beli Sekarang</button>
-    </div>
+        <div class="product-card">
+            <img src="img/smartwatch.jpg" alt="Smartwatch Canggih">
+            <h3>Smartwatch Canggih</h3>
+            <p>Monitor kesehatan dan aktivitas sehari-hari Anda dengan fitur-fitur canggih dalam satu perangkat kecil.</p>
+            <button>Beli Sekarang</button>
+        </div>
+    </section>
 
-    <div class="product-card">
-      <img src="img/smartwatch.jpg" alt="Smartwatch Canggih">
-      <h3>Smartwatch Canggih</h3>
-      <p>Monitor kesehatan dan aktivitas sehari-hari Anda dengan fitur-fitur canggih dalam satu perangkat kecil.</p>
-      <button>Beli Sekarang</button>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>Alamat Toko: Tomorrowland, Boom, Belgia</p>
-    <p>Email: info@valen.com | Telp: 08123465789</p>
-
-
+    <footer>
+        <p>Alamat Toko: Tomorrowland, Boom, Belgia</p>
+        <p>Email: info@valen.com | Telp: 08123465789</p>
         <div class="map-container">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.9120306503146!2d4.383096012689075!3d51.09163097160389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3ef0077f66e81%3A0x8d79404e88297021!2sTomorrowland%20Belgium!5e0!3m2!1sid!2sid!4v1729750459375!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
-          
-    <div class="social-icons">
-      <a href="https://valenarn.blogspot.com" target="_blank"><i class="fab fa-blogger"></i></a>
-      <a href="https://www.instagram.com/ar.valent" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-    </div>
-    <p>&copy; 2024 Valen. All Rights Reserved.</p>
-  </footer>
-
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.9120306503146!2d4.383096012689075!3d51.09163097160389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3ef0077f66e81%3A0x8d79404e88297021!2sTomorrowland%20Belgium!5e0!3m2!1sid!2sid!4v1729750459375!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="social-icons">
+            <a href="https://valenarn.blogspot.com" target="_blank"><i class="fab fa-blogger"></i></a>
+            <a href="https://www.instagram.com/ar.valent" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p>&copy; 2024 Valen. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
