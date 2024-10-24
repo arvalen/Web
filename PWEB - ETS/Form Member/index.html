@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pembelian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Form Pembelian</h2>
+        <form id="purchaseForm">
+            <label for="fullName">Nama Lengkap:</label>
+            <input type="text" id="fullName" name="fullName">
+            <div class="error" id="fullNameError"></div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <div class="error" id="emailError"></div>
+
+            <label for="phone">Nomor Telepon:</label>
+            <input type="text" id="phone" name="phone">
+            <div class="error" id="phoneError"></div>
+
+            <label for="address">Alamat Pengiriman:</label>
+            <textarea id="address" name="address" rows="4"></textarea>
+            <div class="error" id="addressError"></div>
+
+            <label for="paymentMethod">Metode Pembayaran:</label>
+            <select id="paymentMethod" name="paymentMethod">
+                <option value="">Pilih Metode Pembayaran</option>
+                <option value="creditCard">Kartu Kredit</option>
+                <option value="debitCard">Kartu Debit</option>
+                <option value="paypal">PayPal</option>
+            </select>
+            <div class="error" id="paymentMethodError"></div>
+
+            <label for="cardDetails">Detail Kartu (jika menggunakan Kartu):</label>
+            <input type="text" id="cardDetails" name="cardDetails" placeholder="Nomor Kartu">
+            <div class="error" id="cardDetailsError"></div>
+
+            <label for="notes">Catatan Tambahan:</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Tulis catatan tambahan di sini..."></textarea>
+            <div class="error" id="notesError"></div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('purchaseForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            clearErrors();
+
+            const fields = {
+                fullName: document.getElementById('fullName'),
+                email: document.getElementById('email'),
+                phone: document.getElementById('phone'),
+                address: document.getElementById('address'),
+                paymentMethod: document.getElementById('paymentMethod'),
+                cardDetails: document.getElementById('cardDetails'),
+                notes: document.getElementById('notes'),
+            };
+
+            const validations = [
+                validatePresence(fields.fullName, 'fullNameError', 'Nama lengkap wajib diisi.'),
+                validateEmail(fields.email, 'emailError'),
+                validatePresence(fields.phone, 'phoneError', 'Nomor telepon wajib diisi.'),
+                validatePresence(fields.address, 'addressError', 'Alamat pengiriman wajib diisi.'),
+                validatePresence(fields.paymentMethod, 'paymentMethodError', 'Metode pembayaran wajib dipilih.'),
+            ];
+
+            if (fields.paymentMethod.value === 'creditCard' || fields.paymentMethod.value === 'debitCard') {
+                validations.push(validatePresence(fields.cardDetails, 'cardDetailsError', 'Detail kartu wajib diisi.'));
+            }
+
+            const allValid = validations.every(valid => valid === true);
+
+            if (allValid) {
+                alert('Form pembelian berhasil dikirim!');
+            }
+        });
+
+        function clearErrors() {
+            const errorElements = document.querySelectorAll('.error');
+            errorElements.forEach(el => el.textContent = '');
+        }
+
+        function validatePresence(field, errorId, errorMessage) {
+            if (field.value.trim() === '') {
+                document.getElementById(errorId).textContent = errorMessage;
+                return false;
+            }
+            return true;
+        }
+
+        function validateEmail(field, errorId) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (field.value.trim() === '') {
+                document.getElementById(errorId).textContent = 'Email wajib diisi.';
+                return false;
+            } else if (!emailPattern.test(field.value.trim())) {
+                document.getElementById(errorId).textContent = 'Format email tidak valid.';
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
